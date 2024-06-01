@@ -106,6 +106,11 @@ bird = np.array([[3, 2], [5, 1.5], [6, 2], [7, 2.5], [6, 1.5], [8, 1.5],
                  [6, 0.5], [7, 0], [6, -0.5], [5, 1], [3, 2]])
 triangle_3d = np.array([(0, 2, 5), (4, 10, 3), (6, 9, 2), [0, 2, 5]])
 
+
+print(triangle_3d)
+print(change_vector_size(triangle_3d))
+print(mirror(triangle_3d))
+# ---------------------------- main part of execution -------------------------------------------------------
 figure = input("Enter figure you want to transform: star or bird\n")
 command = int(input("Which linear transformation you want to do?\nEnter 1 to resize\n"
                     "Enter 2 to mirror\nEnter 3 to rotate one axis\nEnter 4 to rotate whole figure\n"
