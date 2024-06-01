@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import cv2
 
 
 def change_vector_size(vectors):
@@ -132,3 +133,11 @@ match command:
     case 5:
         figure = any_transformation(figure)
 print(figure)
+
+
+#--------------------- part 2 ----------------------------
+def change_size_cv(vectors):
+    coeff = float(input("Enter coefficient that you want to apply: "))
+    new_basis = cv2.getRotationMatrix2D((0, 0), 0, coeff)
+    new_vectors = cv2.transform(vectors, new_basis)
+    return new_vectors
