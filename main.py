@@ -22,15 +22,20 @@ def mirror(vectors):
 
 
 def rotate_axis(vectors):
+    transformed_vectors = []
     axis = input("Enter axis that you want to rotate around (enter just x or y): ")
     angle = np.deg2rad(float(input("Enter angle of rotation(clockwise): ")))
     if axis == "x":
-        matrix = np.array([[np.cos(angle), -np.sin(angle)], [0, 1]])
+        matrix = np.array([[np.cos(angle), np.sin(angle)], [0, 1]])
     elif axis == "y":
         matrix = np.array([[1, 0], [np.sin(angle), np.cos(angle)]])
+    else:
+        print("Invalid axis")
     for vector in vectors:
-        vector[0] = matrix[0][0]*vector[0] + matrix[1][0]*vector[1]
-        vector[1] = matrix[0][1]*vector[0] + matrix[1][1]*vector[1]
+        new_x = matrix[0][0]*vector[0] + matrix[1][0]*vector[1]
+        new_y = matrix[0][1]*vector[0] + matrix[1][1]*vector[1]
+        transformed_vectors.append([new_x, new_y])
+    vectors = transformed_vectors
     return vectors
 
 def rotate_figure(vectors):
