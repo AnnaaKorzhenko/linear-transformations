@@ -106,24 +106,24 @@ bird = np.array([[3, 2], [5, 1.5], [6, 2], [7, 2.5], [6, 1.5], [8, 1.5],
                  [6, 0.5], [7, 0], [6, -0.5], [5, 1], [3, 2]])
 triangle_3d = np.array([(0, 2, 5), (4, 10, 3), (6, 9, 2), [0, 2, 5]])
 
-# figure = input("Enter figure you want to transform: star or bird\n")
-# command = int(input("Which linear transformation you want to do?\nEnter 1 to resize\n"
-#                     "Enter 2 to mirror\nEnter 3 to rotate one axis\nEnter 4 to rotate whole figure\n"
-#                     "Enter 5 to apply custom matrix\n"))
-# if figure == "star":
-#     figure = star
-# elif figure == "bird":
-#     figure = bird
-# print(figure)
-# match command:
-#     case 1:
-#         figure = change_vector_size(figure)
-#     case 2:
-#         figure = mirror(figure)
-#     case 3:
-#         figure = rotate_axis(figure)
-#     case 4:
-#         figure = rotate_figure(figure)
-#     case 5:
-#         figure = any_transformation(figure)
-# print(figure)
+figure = input("Enter figure you want to transform: star or bird\n")
+command = int(input("Which linear transformation you want to do?\nEnter 1 to resize\n"
+                    "Enter 2 to mirror\nEnter 3 to rotate one axis\nEnter 4 to rotate whole figure\n"
+                    "Enter 5 to apply custom matrix\n"))
+if figure == "star":
+    figure = star
+elif figure == "bird":
+    figure = bird
+print(figure)
+match command:
+    case 1:
+        figure = change_vector_size(figure)
+    case 2:
+        figure = mirror(figure)
+    case 3:
+        figure = rotate_axis(figure)
+    case 4:
+        figure = rotate_figure(figure)
+    case 5:
+        figure = any_transformation(figure)
+print(figure)
