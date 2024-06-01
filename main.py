@@ -141,3 +141,8 @@ def change_size_cv(vectors):
     new_basis = cv2.getRotationMatrix2D((0, 0), 0, coeff)
     new_vectors = cv2.transform(vectors, new_basis)
     return new_vectors
+def rotate_cv(vectors):
+    angle = np.deg2rad(float(input("Enter angle of rotation(clockwise): ")))
+    new_basis = cv2.getRotationMatrix2D((0, 0), angle, 1)
+    new_vectors = cv2.transform(np.array([vectors]), new_basis)
+    return new_vectors
