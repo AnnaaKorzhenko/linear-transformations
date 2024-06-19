@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.image import imread
 
+
+# func for finding the eigenvectors and eigenvalues 
 def find_eigen(matrix):
     eigenvalues, eigenvectors = np.linalg.eig(matrix)
 
@@ -19,3 +21,11 @@ def find_eigen(matrix):
             print(f"Eigenvalue {lambda_i} and corresponding eigenvector {v_i} do NOT satisfy the equation A⋅v = a⋅v")
 
     return eigenvalues, eigenvectors
+
+# original image
+image_in_color = imread("myimage.jpg")
+
+print(f"Висота, ширина, канали): {image_in_color.shape}")
+plt.imshow(image_in_color)
+plt.axis('off')
+plt.show()
